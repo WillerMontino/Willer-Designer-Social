@@ -24,12 +24,17 @@
         }
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #A020F0;
             color: white;
             text-decoration: none;
+            font-weight: bold;
             border-radius: 5px;
             margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #7a0fc0;
         }
         .hidden {
             opacity: 0;
@@ -44,29 +49,25 @@
 </head>
 <body>
     <div class="container">
-        <img src="./prop-1-2.png" alt="Willer Montino" class="profile-pic hidden">
+        <img src="FOTO DE WILLER.png" alt="Willer Montino" class="profile-pic hidden">
         <h1 class="hidden">WILLER MONTINO</h1>
         <h2 class="hidden">Social Media | Filmmaker</h2>
-        <p class="hidden">Meu nome é Willer, nascido em Salvador/BA.<br>
-           Comecei a ser social media na época da pandemia.<br>
-           Desde então, venho ajudando marcas a se destacarem no digital, com designs impactantes e estratégias afiadas.<br>
-           Tenho energia, disposição e um compromisso: transformar a sua visão em resultados reais.<br>
-           Vamos elevar sua presença online ao próximo nível?</p>
-        <a href="https://api.whatsapp.com/send?phone=5574988039827" class="btn hidden">Fale comigo no WhatsApp</a>
+        <p class="hidden">
+            Meu nome é Willer, nascido em Salvador/BA.<br>
+            Comecei a ser social media na época da pandemia.<br>
+            Desde então, venho ajudando marcas a se destacarem no digital, com designs impactantes e estratégias afiadas.<br>
+            Tenho energia, disposição e um compromisso: transformar a sua visão em resultados reais.<br>
+            Vamos elevar sua presença online ao próximo nível?
+        </p>
+        <a href="https://api.whatsapp.com/send?phone=5574988039827" target="_blank" class="btn hidden">Fale comigo no WhatsApp</a>
     </div>
     
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const hiddenElements = document.querySelectorAll(".hidden");
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            hiddenElements.forEach(element => observer.observe(element));
+            hiddenElements.forEach(element => {
+                element.classList.add("visible");
+            });
         });
     </script>
 </body>
